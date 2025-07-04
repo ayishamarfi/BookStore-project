@@ -8,14 +8,14 @@ function Header() {
 
   const [clickStatus, setClickStatus] = useState(false)
   const [dropdownstatus, setDropDownStatus] = useState(false)
-  const [token, setToken] = useState("")
+  // const [token, setToken] = useState("")
 
 
-  useEffect(() => {
-    if (sessionStorage.getItem("token")) {
-      setToken(sessionStorage.getItem("token"))
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (sessionStorage.getItem("token")) {
+  //     setToken(sessionStorage.getItem("token"))
+  //   }
+  // }, [])
 
 
   return (
@@ -38,10 +38,10 @@ function Header() {
           </div>
 
           <div className='md:flex hidden'>
-            {!token ? <Link to={"/login"}><button className='px-4 py-3 ms-3 border border-black rounded cursor-pointer'><FontAwesomeIcon icon={faUser} className='me-3' />Login</button></Link>
+             <Link to={"/login"}><button className='px-4 py-3 ms-3 border border-black rounded cursor-pointer'><FontAwesomeIcon icon={faUser} className='me-3' />Login</button></Link>
 
-              :
-              <div className="relative inline-block text-left">
+              
+              {/* <div className="relative inline-block text-left">
                 <div>
                   <button onClick={() => setDropDownStatus(!dropdownstatus)} type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs " id="menu-button" aria-expanded="true" aria-haspopup="true">
                     <img src="https://cdn-icons-png.freepik.com/512/8742/8742495.png" alt="user icon" style={{ width: '40px', height: '40px' }} />
@@ -59,7 +59,7 @@ function Header() {
                   </div>
                 </div>}
 
-              </div>}
+              </div> */}
 
 
           </div>
@@ -73,29 +73,28 @@ function Header() {
         <div className='flex md:hidden justify-between items-center'>
           <span onClick={() => setClickStatus(!clickStatus)} className='text-white text-2xl'
           ><FontAwesomeIcon icon={faBars} /></span>
-          {!token ? <Link to={"/login"}><button className='px-4 py-3 ms-3 border border-white rounded text-white cursor-pointer'><FontAwesomeIcon icon={faUser} className='me-3' />Login</button></Link>
-            :
-            <div className="relative inline-block text-left">
-              <div>
-                <button onClick={() => setDropDownStatus(!dropdownstatus)} type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-black-950 px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs " id="menu-button" aria-expanded="true" aria-haspopup="true">
-                  <img src="https://cdn-icons-png.freepik.com/512/8742/8742495.png" alt="user icon" style={{ width: '40px', height: '40px' }} />
+           <Link to={"/login"}><button className='px-4 py-3 ms-3 border border-white rounded text-white cursor-pointer'><FontAwesomeIcon icon={faUser} className='me-3' />Login</button></Link>
+            
+           
+            {/* <div className="relative inline-block text-left">
+                <div>
+                  <button onClick={() => setDropDownStatus(!dropdownstatus)} type="button" className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs " id="menu-button" aria-expanded="true" aria-haspopup="true">
+                    <img src="https://cdn-icons-png.freepik.com/512/8742/8742495.png" alt="user icon" style={{ width: '40px', height: '40px' }} />
 
-                </button>
-              </div>
-
-
-              {dropdownstatus && <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                <div className="py-1" role="none">
-
-
-                  <Link to="/profile"><a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0"><FontAwesomeIcon icon={faAddressCard} className='me-2' />Profile</a></Link>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 " role="menuitem" tabindex="-1" id="menu-item-0"><FontAwesomeIcon icon={faPowerOff} className='me-2' />Logout</a>
-
+                  </button>
                 </div>
-              </div>}
 
-            </div>}
 
+                {dropdownstatus && <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                  <div className="py-1" role="none">
+
+                    <Link to="/profile"><a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0"><FontAwesomeIcon icon={faAddressCard} className='me-2' />Profile</a></Link>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0"><FontAwesomeIcon icon={faPowerOff} className='me-2' />Logout</a>
+
+                  </div>
+                </div>}
+
+              </div> */}
         </div>
 
         <ul className={clickStatus ? 'md:flex text-white' : 'text-white md:flex hidden md:justify-center  me-10 mt-4 md:mt-0'}>
